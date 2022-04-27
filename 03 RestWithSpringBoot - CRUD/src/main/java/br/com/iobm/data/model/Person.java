@@ -1,4 +1,4 @@
-package br.com.iobm.model;
+package br.com.iobm.data.model;
 
 import java.io.Serializable;
 
