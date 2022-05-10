@@ -15,12 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.iobm.data.vo.v1.PersonVO;
 import br.com.iobm.services.PersonServices;
+import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/api/person/v1")
+@Api(value="",tags={"Exemplo1"})
+//@Tag(name = "Exemplo", description = "EXEMPLOOOOOO")
 public class PersonController {
 	
-	@Autowired
+	@Autowired 
 	private PersonServices service;
 	
 	@GetMapping
@@ -28,7 +32,7 @@ public class PersonController {
 		return service.findAll();
 	}	
 	
-	@GetMapping("/{id}")
+	@GetMapping(value = "/{id}")
 	public PersonVO findById(@PathVariable("id") Long id) {
 		return service.findById(id);
 	}	
